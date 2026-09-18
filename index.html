@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Haurva Protocol</title>
 
     <!-- Tailwind CSS CDN -->
@@ -42,12 +43,6 @@
             color: #F5F3EE;
         }
 
-        .glass {
-            background: rgba(7, 26, 51, 0.35);
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
-        }
-
         .hero-grid {
             background-image:
                 linear-gradient(rgba(20, 100, 255, 0.045) 1px, transparent 1px),
@@ -74,34 +69,6 @@
         }
 
         .faq-item.active .faq-icon {
-            transform: rotate(45deg);
-        }
-
-        .image-placeholder {
-            position: relative;
-            overflow: hidden;
-            background:
-                radial-gradient(circle at 30% 30%, rgba(20, 100, 255, 0.35), transparent 35%),
-                radial-gradient(circle at 70% 70%, rgba(255, 106, 0, 0.20), transparent 35%),
-                #071A33;
-        }
-
-        .image-placeholder::before {
-            content: "";
-            position: absolute;
-            inset: 12%;
-            border: 1px solid rgba(245, 243, 238, 0.12);
-            transform: rotate(45deg);
-        }
-
-        .image-placeholder::after {
-            content: "";
-            position: absolute;
-            width: 45%;
-            height: 45%;
-            left: 27.5%;
-            top: 27.5%;
-            border: 1px solid rgba(255, 106, 0, 0.45);
             transform: rotate(45deg);
         }
 
@@ -132,12 +99,12 @@
          NAVBAR
     ========================== -->
     <header class="fixed top-0 left-0 right-0 z-50 bg-electric shadow-lg shadow-black/20">
+
         <nav class="max-w-7xl mx-auto px-6 lg:px-10 h-24 flex items-center justify-between">
 
             <!-- Logo -->
             <a href="/" class="flex items-center shrink-0">
                 <div class="w-16 h-16 lg:w-20 lg:h-20 rounded-xl overflow-hidden bg-navy premium-border flex items-center justify-center">
-                    <!-- Replace this src with your actual 128x128 image -->
                     <img
                         src="haurvacoin.png"
                         alt="Haurva Protocol"
@@ -148,11 +115,31 @@
 
             <!-- Desktop Navigation -->
             <div class="hidden lg:flex items-center gap-8 text-sm font-medium">
-                <a href="#about" class="nav-link text-cream hover:text-white transition">About</a>
-                <a href="#whitepaper" class="nav-link text-cream hover:text-white transition">Whitepaper</a>
-                <a href="#faq" class="nav-link text-cream hover:text-white transition">FAQ</a>
-                <a href="#contracts" class="nav-link text-cream hover:text-white transition">Contracts</a>
-                <a href="#team" class="nav-link text-cream hover:text-white transition">Team</a>
+
+                <a href="#about"
+                   class="nav-link text-cream hover:text-white transition">
+                    About
+                </a>
+
+                <a href="#whitepaper"
+                   class="nav-link text-cream hover:text-white transition">
+                    Whitepaper
+                </a>
+
+                <a href="#faq"
+                   class="nav-link text-cream hover:text-white transition">
+                    FAQ
+                </a>
+
+                <a href="#contracts"
+                   class="nav-link text-cream hover:text-white transition">
+                    Contracts
+                </a>
+
+                <a href="#team"
+                   class="nav-link text-cream hover:text-white transition">
+                    Team
+                </a>
 
                 <a
                     href="https://example.com"
@@ -162,6 +149,7 @@
                 >
                     Swapper ↗
                 </a>
+
             </div>
 
             <!-- Mobile Button -->
@@ -170,35 +158,63 @@
                 class="lg:hidden text-cream"
                 aria-label="Open menu"
             >
-                <svg xmlns="http://www.w3.org/2000/svg"
-                     class="w-7 h-7"
-                     fill="none"
-                     viewBox="0 0 24 24"
-                     stroke="currentColor">
-                    <path stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="1.5"
-                          d="M4 6h16M4 12h16M4 18h16"/>
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-7 h-7"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="1.5"
+                        d="M4 6h16M4 12h16M4 18h16"
+                    />
                 </svg>
             </button>
+
         </nav>
 
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden lg:hidden bg-electric border-t border-white/10 px-6 pb-6">
+        <div
+            id="mobile-menu"
+            class="hidden lg:hidden bg-electric border-t border-white/10 px-6 pb-6"
+        >
             <div class="flex flex-col gap-5 pt-5">
-                <a href="#about" class="mobile-link text-cream">About</a>
-                <a href="#whitepaper" class="mobile-link text-cream">Whitepaper</a>
-                <a href="#faq" class="mobile-link text-cream">FAQ</a>
-                <a href="#contracts" class="mobile-link text-cream">Contracts</a>
-                <a href="#team" class="mobile-link text-cream">Team</a>
-                <a href="https://example.com"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   class="text-orange font-semibold">
+
+                <a href="#about" class="mobile-link text-cream">
+                    About
+                </a>
+
+                <a href="#whitepaper" class="mobile-link text-cream">
+                    Whitepaper
+                </a>
+
+                <a href="#faq" class="mobile-link text-cream">
+                    FAQ
+                </a>
+
+                <a href="#contracts" class="mobile-link text-cream">
+                    Contracts
+                </a>
+
+                <a href="#team" class="mobile-link text-cream">
+                    Team
+                </a>
+
+                <a
+                    href="https://example.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-orange font-semibold"
+                >
                     Swapper ↗
                 </a>
+
             </div>
         </div>
+
     </header>
 
 
@@ -207,12 +223,16 @@
     ========================== -->
     <main>
 
-        <section id="about" class="pt-40 lg:pt-48 pb-24 lg:pb-32 bg-graphite hero-grid">
+        <section
+            id="about"
+            class="pt-40 lg:pt-48 pb-24 lg:pb-32 bg-graphite hero-grid"
+        >
 
             <div class="max-w-7xl mx-auto px-6 lg:px-10">
 
                 <!-- Hero Intro -->
                 <div class="max-w-4xl mb-20 lg:mb-28">
+
                     <p class="text-orange font-semibold tracking-[0.3em] uppercase text-sm mb-5">
                         Haurva Protocol
                     </p>
@@ -227,6 +247,7 @@
                         Integer vitae justo eget magna fermentum iaculis.
                         Aenean commodo ligula eget dolor.
                     </p>
+
                 </div>
 
 
@@ -234,6 +255,7 @@
                 <div class="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center mb-28">
 
                     <div>
+
                         <span class="text-orange text-sm font-bold tracking-[0.25em] uppercase">
                             01 / Protocol
                         </span>
@@ -252,17 +274,21 @@
                             Duis aute irure dolor in reprehenderit in voluptate velit esse
                             cillum dolore eu fugiat nulla pariatur.
                         </p>
+
                     </div>
 
-                    <div class="image-placeholder aspect-square max-w-[512px] w-full mx-auto rounded-3xl premium-border flex items-center justify-center">
-                        <div class="relative z-10 text-center">
-                            <div class="text-electric text-7xl font-bold tracking-tighter">
-                                H
-                            </div>
-                            <div class="mt-3 text-xs tracking-[0.35em] uppercase text-cream/40">
-                                512 × 512
-                            </div>
-                        </div>
+
+                    <!-- HERO IMAGE 1 -->
+                    <div class="aspect-square max-w-[512px] w-full mx-auto">
+
+                        <img
+                            src="about-image-1.png"
+                            alt="Haurva Protocol"
+                            width="512"
+                            height="512"
+                            class="w-full h-full object-cover rounded-3xl premium-border"
+                        >
+
                     </div>
 
                 </div>
@@ -271,18 +297,22 @@
                 <!-- Second Story Block -->
                 <div class="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
 
-                    <div class="order-2 lg:order-1 image-placeholder aspect-square max-w-[512px] w-full mx-auto rounded-3xl premium-border flex items-center justify-center">
-                        <div class="relative z-10 text-center">
-                            <div class="text-orange text-7xl font-bold tracking-tighter">
-                                $
-                            </div>
-                            <div class="mt-3 text-xs tracking-[0.35em] uppercase text-cream/40">
-                                512 × 512
-                            </div>
-                        </div>
+                    <!-- HERO IMAGE 2 -->
+                    <div class="order-2 lg:order-1 aspect-square max-w-[512px] w-full mx-auto">
+
+                        <img
+                            src="about-image-2.png"
+                            alt="Haurva Stable Coin"
+                            width="512"
+                            height="512"
+                            class="w-full h-full object-cover rounded-3xl premium-border"
+                        >
+
                     </div>
 
+
                     <div class="order-1 lg:order-2">
+
                         <span class="text-orange text-sm font-bold tracking-[0.25em] uppercase">
                             02 / Philosophy
                         </span>
@@ -301,29 +331,37 @@
                             Maecenas tempus, tellus eget condimentum rhoncus,
                             sem quam semper libero, sit amet adipiscing sem neque sed ipsum.
                         </p>
+
                     </div>
 
                 </div>
 
             </div>
+
         </section>
 
 
         <!-- =========================
              WHITEPAPER
         ========================== -->
-        <section id="whitepaper" class="bg-navy py-28 lg:py-40">
+        <section
+            id="whitepaper"
+            class="bg-navy py-28 lg:py-40"
+        >
 
             <div class="max-w-7xl mx-auto px-6 lg:px-10">
 
                 <div class="max-w-5xl">
+
                     <p class="text-orange text-sm font-bold tracking-[0.3em] uppercase mb-6">
                         Whitepaper
                     </p>
 
                     <h2 class="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">
                         Read the architecture,
-                        <span class="text-electric">understand the protocol.</span>
+                        <span class="text-electric">
+                            understand the protocol.
+                        </span>
                     </h2>
 
                     <p class="mt-8 text-lg text-cream/60 max-w-2xl leading-relaxed">
@@ -339,31 +377,42 @@
                     >
                         Download The Whitepaper
 
-                        <svg xmlns="http://www.w3.org/2000/svg"
-                             class="w-5 h-5"
-                             fill="none"
-                             viewBox="0 0 24 24"
-                             stroke="currentColor">
-                            <path stroke-linecap="round"
-                                  stroke-linejoin="round"
-                                  stroke-width="1.8"
-                                  d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/>
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="w-5 h-5"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="1.8"
+                                d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"
+                            />
                         </svg>
+
                     </a>
+
                 </div>
 
             </div>
+
         </section>
 
 
         <!-- =========================
              FAQ
         ========================== -->
-        <section id="faq" class="bg-graphite py-28 lg:py-36">
+        <section
+            id="faq"
+            class="bg-graphite py-28 lg:py-36"
+        >
 
             <div class="max-w-5xl mx-auto px-6 lg:px-10">
 
                 <div class="mb-14">
+
                     <p class="text-orange text-sm font-bold tracking-[0.3em] uppercase mb-5">
                         FAQ
                     </p>
@@ -371,6 +420,7 @@
                     <h2 class="text-4xl md:text-6xl font-bold tracking-tight">
                         Frequently asked questions.
                     </h2>
+
                 </div>
 
 
@@ -378,7 +428,10 @@
 
                     <!-- FAQ 1 -->
                     <div class="faq-item premium-border rounded-2xl overflow-hidden bg-navy/50">
-                        <button class="faq-button w-full px-6 lg:px-8 py-7 flex items-center justify-between text-left">
+
+                        <button
+                            class="faq-button w-full px-6 lg:px-8 py-7 flex items-center justify-between text-left"
+                        >
                             <span class="text-lg lg:text-xl font-semibold">
                                 What is Haurva Protocol?
                             </span>
@@ -394,12 +447,16 @@
                                 Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                             </div>
                         </div>
+
                     </div>
 
 
                     <!-- FAQ 2 -->
                     <div class="faq-item premium-border rounded-2xl overflow-hidden bg-navy/50">
-                        <button class="faq-button w-full px-6 lg:px-8 py-7 flex items-center justify-between text-left">
+
+                        <button
+                            class="faq-button w-full px-6 lg:px-8 py-7 flex items-center justify-between text-left"
+                        >
                             <span class="text-lg lg:text-xl font-semibold">
                                 How does the protocol work?
                             </span>
@@ -415,12 +472,16 @@
                                 Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
                             </div>
                         </div>
+
                     </div>
 
 
                     <!-- FAQ 3 -->
                     <div class="faq-item premium-border rounded-2xl overflow-hidden bg-navy/50">
-                        <button class="faq-button w-full px-6 lg:px-8 py-7 flex items-center justify-between text-left">
+
+                        <button
+                            class="faq-button w-full px-6 lg:px-8 py-7 flex items-center justify-between text-left"
+                        >
                             <span class="text-lg lg:text-xl font-semibold">
                                 Where can I use the token?
                             </span>
@@ -436,12 +497,16 @@
                                 Nulla consequat massa quis enim. Donec pede justo, fringilla vel.
                             </div>
                         </div>
+
                     </div>
 
 
                     <!-- FAQ 4 -->
                     <div class="faq-item premium-border rounded-2xl overflow-hidden bg-navy/50">
-                        <button class="faq-button w-full px-6 lg:px-8 py-7 flex items-center justify-between text-left">
+
+                        <button
+                            class="faq-button w-full px-6 lg:px-8 py-7 flex items-center justify-between text-left"
+                        >
                             <span class="text-lg lg:text-xl font-semibold">
                                 Is the protocol decentralized?
                             </span>
@@ -457,12 +522,16 @@
                                 Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.
                             </div>
                         </div>
+
                     </div>
 
 
                     <!-- FAQ 5 -->
                     <div class="faq-item premium-border rounded-2xl overflow-hidden bg-navy/50">
-                        <button class="faq-button w-full px-6 lg:px-8 py-7 flex items-center justify-between text-left">
+
+                        <button
+                            class="faq-button w-full px-6 lg:px-8 py-7 flex items-center justify-between text-left"
+                        >
                             <span class="text-lg lg:text-xl font-semibold">
                                 Where can I learn more?
                             </span>
@@ -478,21 +547,28 @@
                                 Etiam sit amet orci eget eros faucibus tincidunt.
                             </div>
                         </div>
+
                     </div>
 
                 </div>
+
             </div>
+
         </section>
 
 
         <!-- =========================
              CONTRACTS
         ========================== -->
-        <section id="contracts" class="bg-navy py-28 lg:py-36">
+        <section
+            id="contracts"
+            class="bg-navy py-28 lg:py-36"
+        >
 
             <div class="max-w-7xl mx-auto px-6 lg:px-10">
 
                 <div class="max-w-3xl">
+
                     <p class="text-orange text-sm font-bold tracking-[0.3em] uppercase mb-5">
                         Contracts
                     </p>
@@ -505,11 +581,14 @@
                         Contract addresses and blockchain information can be
                         added here as the protocol expands.
                     </p>
+
                 </div>
+
 
                 <div class="grid md:grid-cols-2 gap-5 mt-14">
 
                     <div class="premium-border rounded-2xl p-7 bg-graphite">
+
                         <p class="text-xs uppercase tracking-[0.2em] text-cream/40">
                             Token Contract
                         </p>
@@ -517,9 +596,12 @@
                         <p class="mt-4 font-mono text-sm text-electric break-all">
                             0x0000000000000000000000000000000000000000
                         </p>
+
                     </div>
 
+
                     <div class="premium-border rounded-2xl p-7 bg-graphite">
+
                         <p class="text-xs uppercase tracking-[0.2em] text-cream/40">
                             Protocol Contract
                         </p>
@@ -527,22 +609,28 @@
                         <p class="mt-4 font-mono text-sm text-electric break-all">
                             0x0000000000000000000000000000000000000000
                         </p>
+
                     </div>
 
                 </div>
 
             </div>
+
         </section>
 
 
         <!-- =========================
              TEAM
         ========================== -->
-        <section id="team" class="bg-graphite py-28 lg:py-36">
+        <section
+            id="team"
+            class="bg-graphite py-28 lg:py-36"
+        >
 
             <div class="max-w-7xl mx-auto px-6 lg:px-10">
 
                 <div class="text-center mb-16">
+
                     <p class="text-orange text-sm font-bold tracking-[0.3em] uppercase mb-5">
                         Team
                     </p>
@@ -550,6 +638,7 @@
                     <h2 class="text-4xl md:text-6xl font-bold tracking-tight">
                         The people behind the protocol.
                     </h2>
+
                 </div>
 
 
@@ -557,14 +646,17 @@
 
                     <div class="text-center">
 
-                        <!-- Replace with actual team photo -->
+                        <!-- Team Photo -->
                         <div class="w-48 h-48 mx-auto rounded-full overflow-hidden premium-border bg-navy">
+
                             <img
                                 src="john-doe.jpg"
                                 alt="John Doe"
                                 class="w-full h-full object-cover"
                             >
+
                         </div>
+
 
                         <h3 class="mt-7 text-2xl font-bold">
                             John Doe
@@ -573,6 +665,7 @@
                         <p class="mt-2 text-cream/45">
                             Founder & Developer
                         </p>
+
 
                         <!-- Social Icons -->
                         <div class="flex justify-center gap-4 mt-6">
@@ -585,13 +678,16 @@
                                 aria-label="John Doe LinkedIn"
                                 class="w-11 h-11 rounded-full bg-navy premium-border flex items-center justify-center hover:bg-electric transition"
                             >
-                                <svg xmlns="http://www.w3.org/2000/svg"
-                                     viewBox="0 0 24 24"
-                                     fill="currentColor"
-                                     class="w-5 h-5">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24"
+                                    fill="currentColor"
+                                    class="w-5 h-5"
+                                >
                                     <path d="M20.45 20.45h-3.56v-5.58c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.68H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.47v6.27zM5.32 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM3.54 20.45H7.1V9H3.54v11.45z"/>
                                 </svg>
                             </a>
+
 
                             <!-- X -->
                             <a
@@ -601,10 +697,12 @@
                                 aria-label="John Doe X"
                                 class="w-11 h-11 rounded-full bg-navy premium-border flex items-center justify-center hover:bg-electric transition"
                             >
-                                <svg xmlns="http://www.w3.org/2000/svg"
-                                     viewBox="0 0 24 24"
-                                     fill="currentColor"
-                                     class="w-5 h-5">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24"
+                                    fill="currentColor"
+                                    class="w-5 h-5"
+                                >
                                     <path d="M18.244 2H21.5l-7.11 8.13L22.75 22h-6.6l-5.17-6.76L5.06 22H1.8l7.6-8.69L1.25 2h6.77l4.67 6.17L18.244 2zm-1.15 17.75h1.8L7.01 4.13H5.08l12.014 15.62z"/>
                                 </svg>
                             </a>
@@ -616,6 +714,7 @@
                 </div>
 
             </div>
+
         </section>
 
     </main>
@@ -632,17 +731,21 @@
 
                 <!-- Brand -->
                 <a href="/" class="flex items-center gap-4">
+
                     <div class="w-12 h-12 rounded-lg overflow-hidden bg-navy">
+
                         <img
-                            src="logo.png"
+                            src="haurvacoin.png"
                             alt="Haurva Protocol"
                             class="w-full h-full object-cover"
                         >
+
                     </div>
 
                     <span class="font-bold tracking-tight">
                         Haurva Protocol
                     </span>
+
                 </a>
 
 
@@ -657,13 +760,16 @@
                         aria-label="Telegram"
                         class="w-11 h-11 rounded-full bg-navy/30 flex items-center justify-center hover:bg-orange transition"
                     >
-                        <svg xmlns="http://www.w3.org/2000/svg"
-                             viewBox="0 0 24 24"
-                             fill="currentColor"
-                             class="w-5 h-5">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                            class="w-5 h-5"
+                        >
                             <path d="M21.4 3.3L18.2 20c-.24 1.18-.87 1.47-1.77.92l-4.87-3.59-2.35 2.26c-.26.26-.48.48-.98.48l.35-4.96 9.03-8.16c.39-.35-.09-.55-.61-.2L5.83 13.9.99 12.39c-1.05-.33-1.07-1.05.22-1.55L20.12 3.4c.89-.33 1.67.2 1.28-.1z"/>
                         </svg>
                     </a>
+
 
                     <!-- X -->
                     <a
@@ -673,10 +779,12 @@
                         aria-label="X"
                         class="w-11 h-11 rounded-full bg-navy/30 flex items-center justify-center hover:bg-orange transition"
                     >
-                        <svg xmlns="http://www.w3.org/2000/svg"
-                             viewBox="0 0 24 24"
-                             fill="currentColor"
-                             class="w-5 h-5">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                            class="w-5 h-5"
+                        >
                             <path d="M18.244 2H21.5l-7.11 8.13L22.75 22h-6.6l-5.17-6.76L5.06 22H1.8l7.6-8.69L1.25 2h6.77l4.67 6.17L18.244 2zm-1.15 17.75h1.8L7.01 4.13H5.08l12.014 15.62z"/>
                         </svg>
                     </a>
@@ -699,6 +807,7 @@
             </div>
 
         </div>
+
     </footer>
 
 
@@ -708,18 +817,24 @@
     <script>
 
         // Mobile menu
-        const mobileButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileButton =
+            document.getElementById('mobile-menu-button');
+
+        const mobileMenu =
+            document.getElementById('mobile-menu');
 
         mobileButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
 
+
         // Close mobile menu after clicking a link
         document.querySelectorAll('.mobile-link').forEach(link => {
+
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
             });
+
         });
 
 
@@ -730,14 +845,14 @@
 
                 const item = button.closest('.faq-item');
 
-                // Close other FAQ items
                 document.querySelectorAll('.faq-item').forEach(otherItem => {
+
                     if (otherItem !== item) {
                         otherItem.classList.remove('active');
                     }
+
                 });
 
-                // Toggle current item
                 item.classList.toggle('active');
 
             });
