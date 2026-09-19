@@ -54,22 +54,78 @@
             border: 1px solid rgba(245, 243, 238, 0.10);
         }
 
+        .faq-item {
+            background: rgba(7, 26, 51, 0.55);
+            border-color: rgba(245, 243, 238, 0.10);
+            transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease;
+        }
+
+        .faq-item:hover {
+            background: rgba(7, 26, 51, 0.78);
+            border-color: rgba(20, 100, 255, 0.35);
+        }
+
+        .faq-item.active {
+            background: rgba(7, 26, 51, 0.9);
+            border-color: rgba(255, 106, 0, 0.45);
+        }
+
+        .faq-button {
+            min-height: 76px;
+            gap: 2rem;
+            transition: background 0.25s ease;
+        }
+
+        .faq-button:hover {
+            background: rgba(20, 100, 255, 0.055);
+        }
+
         .faq-content {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.35s ease;
+            opacity: 0;
+            transition: max-height 0.4s ease, opacity 0.25s ease;
         }
 
         .faq-item.active .faq-content {
             max-height: 300px;
+            opacity: 1;
         }
 
         .faq-icon {
-            transition: transform 0.3s ease;
+            width: 2.25rem;
+            height: 2.25rem;
+            min-width: 2.25rem;
+            border: 1px solid rgba(255, 106, 0, 0.35);
+            border-radius: 9999px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+            transition: transform 0.3s ease, background 0.25s ease, color 0.25s ease;
         }
 
         .faq-item.active .faq-icon {
             transform: rotate(45deg);
+            background: #FF6A00;
+            color: #F5F3EE;
+            border-color: #FF6A00;
+        }
+
+        .faq-answer {
+            border-top: 1px solid rgba(245, 243, 238, 0.07);
+        }
+
+        @media (max-width: 640px) {
+            .faq-button {
+                min-height: 68px;
+                gap: 1rem;
+            }
+
+            .faq-button > span:first-child {
+                font-size: 1rem;
+                line-height: 1.45;
+            }
         }
 
         .nav-link {
@@ -508,7 +564,7 @@
                         </button>
 
                         <div class="faq-content">
-                            <div class="px-6 lg:px-8 pb-7 text-cream/55 leading-relaxed">
+                            <div class="faq-answer px-6 lg:px-8 pb-7 pt-6 text-cream/55 leading-relaxed">
                                Haurva Protocol is a stablecoin protocol which aligns its price using the price of the native token of the blockchain. Our protocol is basically our very own way of making an <em>Algorithmic Stablecoin.</em>
                             </div>
                         </div>
@@ -532,7 +588,7 @@
                         </button>
 
                         <div class="faq-content">
-                            <div class="px-6 lg:px-8 pb-7 text-cream/55 leading-relaxed">
+                            <div class="faq-answer px-6 lg:px-8 pb-7 pt-6 text-cream/55 leading-relaxed">
                                 Haurva Protocol connects to the oracle (for now <em>BNB/USD</em>) and gets the price of the native coin, then aligns its own price to exactly one US Dollar and also takes %0.05 minting fee per coin. Also, when you redeem it, it does it in reverse and gives you back the token you spent.
                             </div>
                         </div>
@@ -556,7 +612,7 @@
                         </button>
 
                         <div class="faq-content">
-                            <div class="px-6 lg:px-8 pb-7 text-cream/55 leading-relaxed">
+                            <div class="faq-answer px-6 lg:px-8 pb-7 pt-6 text-cream/55 leading-relaxed">
                                 Every place you can use crypto currencies and stablecoins, you can use Haurva Protocol as well.
                             </div>
                         </div>
@@ -580,7 +636,7 @@
                         </button>
 
                         <div class="faq-content">
-                            <div class="px-6 lg:px-8 pb-7 text-cream/55 leading-relaxed">
+                            <div class="faq-answer px-6 lg:px-8 pb-7 pt-6 text-cream/55 leading-relaxed">
                                 Not in a traditional sense, but it's not bank or corporate backed as well. Haurva Protocol is mostly like a startup with the goal of making stablecoins great again!
                             </div>
                         </div>
@@ -604,7 +660,7 @@
                         </button>
 
                         <div class="faq-content">
-                            <div class="px-6 lg:px-8 pb-7 text-cream/55 leading-relaxed">
+                            <div class="faq-answer px-6 lg:px-8 pb-7 pt-6 text-cream/55 leading-relaxed">
                                 We currently are on Binance Smart Chain. We have plans of bridging the protocol to every other EVM compatible chain as well but for now, we stick to BSC.
                             </div>
                         </div>
@@ -629,7 +685,7 @@
                         </button>
 
                         <div class="faq-content">
-                            <div class="px-6 lg:px-8 pb-7 text-cream/55 leading-relaxed">
+                            <div class="faq-answer px-6 lg:px-8 pb-7 pt-6 text-cream/55 leading-relaxed">
                                 Because BSC is fast and also affordable. It also has good reputation in the crypto community.
                             </div>
                         </div>
@@ -652,7 +708,7 @@
                         </button>
 
                         <div class="faq-content">
-                            <div class="px-6 lg:px-8 pb-7 text-cream/55 leading-relaxed">
+                            <div class="faq-answer px-6 lg:px-8 pb-7 pt-6 text-cream/55 leading-relaxed">
                                 We have <a href="https://news.haurvacoin.com">Harva News ↗</a> where you can learn more about our project and follow the news.
                             </div>
                         </div>
