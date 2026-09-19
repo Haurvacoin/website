@@ -54,24 +54,6 @@
             border: 1px solid rgba(245, 243, 238, 0.10);
         }
 
-        .faq-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.35s ease;
-        }
-
-        .faq-item.active .faq-content {
-            max-height: 300px;
-        }
-
-        .faq-icon {
-            transition: transform 0.3s ease;
-        }
-
-        .faq-item.active .faq-icon {
-            transform: rotate(45deg);
-        }
-
         .nav-link {
             position: relative;
         }
@@ -91,109 +73,172 @@
             width: 100%;
         }
 
-        /* FAQ — spacing and visual rhythm */
-        #faq .faq-list {
+        /* =========================================================
+           FAQ
+           ========================================================= */
+
+        .faq-list {
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 32px;
+            width: 100%;
         }
 
-        #faq .faq-item {
-            margin: 0;
-            border-radius: 18px;
-            background: rgba(7, 26, 51, 0.72);
-            border: 1px solid rgba(245, 243, 238, 0.10);
-            transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease;
+        .faq-item {
+            width: 100%;
+            background: #071A33;
+            border: 1px solid rgba(245, 243, 238, 0.14);
+            border-radius: 30px;
+            overflow: hidden;
+            transition:
+                border-color 0.25s ease,
+                background 0.25s ease;
         }
 
-        #faq .faq-item:hover {
+        .faq-item:hover {
             border-color: rgba(20, 100, 255, 0.45);
-            background: rgba(7, 26, 51, 0.88);
         }
 
-        #faq .faq-item.active {
-            border-color: rgba(255, 106, 0, 0.38);
-            background: rgba(7, 26, 51, 0.92);
+        .faq-item.active {
+            border-color: rgba(255, 106, 0, 0.45);
         }
 
-        #faq .faq-button {
-            min-height: 76px;
-            padding: 22px 28px;
-            gap: 24px;
-            line-height: 1.35;
+        .faq-button {
+            width: 100%;
+            min-height: 160px;
+            padding: 0 56px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            text-align: left;
+            background: transparent;
+            color: #F5F3EE;
         }
 
-        #faq .faq-question {
-            padding-right: 12px;
+        .faq-question {
+            display: block;
+            font-size: 28px;
+            line-height: 1.25;
+            font-weight: 600;
+            letter-spacing: -0.025em;
         }
 
-        #faq .faq-icon {
-            flex: 0 0 auto;
-            width: 34px;
-            height: 34px;
+        .faq-icon {
+            flex: 0 0 48px;
+            width: 48px;
+            height: 48px;
+            border: 1px solid rgba(255, 106, 0, 0.65);
+            border-radius: 9999px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 1px solid rgba(255, 106, 0, 0.35);
-            border-radius: 999px;
-            font-size: 24px;
+            color: #FF6A00;
+            font-size: 31px;
+            font-weight: 300;
             line-height: 1;
+            transition:
+                transform 0.3s ease,
+                background 0.3s ease,
+                color 0.3s ease;
         }
 
-        #faq .faq-content > div {
-            margin: 0 28px;
-            padding: 0 0 24px;
-            padding-top: 0;
-            border-top: 1px solid rgba(245, 243, 238, 0.07);
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+            background: #FF6A00;
+            color: #F5F3EE;
         }
 
-        #faq .faq-content > div::before {
-            content: "";
-            display: block;
-            height: 18px;
-        }
-
-        #faq .faq-content {
+        .faq-content {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.35s ease;
+            transition: max-height 0.4s ease;
         }
 
-        #faq .faq-item.active .faq-content {
-            max-height: 400px;
+        .faq-answer {
+            margin: 0 56px;
+            padding: 0 0 42px;
+            padding-top: 0;
+            color: rgba(245, 243, 238, 0.60);
+            font-size: 18px;
+            line-height: 1.75;
+            border-top: 1px solid rgba(245, 243, 238, 0.08);
         }
 
-        @media (max-width: 640px) {
-            #faq .faq-list {
-                gap: 12px;
+        .faq-answer::before {
+            content: "";
+            display: block;
+            height: 28px;
+        }
+
+        .faq-answer a {
+            color: #FF6A00;
+            transition: opacity 0.2s ease;
+        }
+
+        .faq-answer a:hover {
+            opacity: 0.75;
+        }
+
+        @media (max-width: 768px) {
+            .faq-list {
+                gap: 18px;
             }
 
-            #faq .faq-button {
-                min-height: 68px;
-                padding: 18px 20px;
+            .faq-item {
+                border-radius: 22px;
+            }
+
+            .faq-button {
+                min-height: 110px;
+                padding: 0 28px;
+                gap: 20px;
+            }
+
+            .faq-question {
+                font-size: 20px;
+            }
+
+            .faq-icon {
+                flex-basis: 40px;
+                width: 40px;
+                height: 40px;
+                font-size: 26px;
+            }
+
+            .faq-answer {
+                margin: 0 28px;
+                padding-bottom: 28px;
+                font-size: 16px;
+            }
+
+            .faq-answer::before {
+                height: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .faq-button {
+                min-height: 96px;
+                padding: 0 20px;
                 gap: 16px;
             }
 
-            #faq .faq-question {
-                padding-right: 4px;
+            .faq-question {
+                font-size: 18px;
             }
 
-            #faq .faq-icon {
-                width: 30px;
-                height: 30px;
-                font-size: 21px;
+            .faq-icon {
+                flex-basis: 36px;
+                width: 36px;
+                height: 36px;
+                font-size: 23px;
             }
 
-            #faq .faq-content > div {
+            .faq-answer {
                 margin: 0 20px;
-                padding-bottom: 20px;
-            }
-
-            #faq .faq-content > div::before {
-                height: 14px;
             }
         }
-
     </style>
 </head>
 
@@ -368,7 +413,7 @@
                     </h1>
 
                     <p class="mt-8 text-lg lg:text-xl text-cream/65 max-w-2xl leading-relaxed">
-                       Haurva Protocol is a stable coin mechanism relying on native coins of the blockchain (BNB for now) instead of fiat money and it keeps its own price exactly at the pre-determined price using smart contracts and algorithms.
+                        Haurva Protocol is a stable coin mechanism relying on native coins of the blockchain (BNB for now) instead of fiat money and it keeps its own price exactly at the pre-determined price using smart contracts and algorithms.
                     </p>
 
                 </div>
@@ -392,7 +437,7 @@
                         </p>
 
                         <p class="mt-5 text-cream/65 text-lg leading-relaxed">
-                           Currently, we're only focusing on US Dollars as our main goal. The protocol is different from Tether or Circle and doesn't rely on the fiat money or bank account. Instead, we offer a central EVM compatible vault.
+                            Currently, we're only focusing on US Dollars as our main goal. The protocol is different from Tether or Circle and doesn't rely on the fiat money or bank account. Instead, we offer a central EVM compatible vault.
                         </p>
 
                     </div>
@@ -579,39 +624,44 @@
             class="bg-graphite py-28 lg:py-36"
         >
 
-            <div class="max-w-5xl mx-auto px-6 lg:px-10">
+            <div class="max-w-7xl mx-auto px-6 lg:px-10">
 
-                <div class="mb-14">
+                <div class="mb-16 lg:mb-20">
 
                     <p class="text-orange text-sm font-bold tracking-[0.3em] uppercase mb-5">
                         FAQ
                     </p>
 
-                    <h2 class="text-4xl md:text-6xl font-bold tracking-tight">
+                    <h2 class="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">
                         Frequently asked questions.
                     </h2>
 
                 </div>
 
 
+                <!-- ALL FAQ ITEMS ARE INSIDE ONE SINGLE LIST -->
                 <div class="faq-list">
 
                     <!-- FAQ 1 -->
-                    <div class="faq-item premium-border rounded-2xl overflow-hidden bg-navy/50">
+                    <div class="faq-item">
 
-                        <button class="faq-button w-full px-6 lg:px-8 py-7 flex items-center justify-between text-left">
-                            <span class="faq-question text-lg lg:text-xl font-semibold">
+                        <button
+                            class="faq-button"
+                            type="button"
+                            aria-expanded="false"
+                        >
+                            <span class="faq-question">
                                 What is Haurva Protocol?
                             </span>
 
-                            <span class="faq-icon text-orange text-3xl font-light">
+                            <span class="faq-icon">
                                 +
                             </span>
                         </button>
 
                         <div class="faq-content">
-                            <div class="px-6 lg:px-8 pb-7 text-cream/55 leading-relaxed">
-                               Haurva Protocol is a stablecoin protocol which aligns its price using the price of the native token of the blockchain. Our protocol is basically our very own way of making an <em>Algorithmic Stablecoin.</em>
+                            <div class="faq-answer">
+                                Haurva Protocol is a stablecoin protocol which aligns its price using the price of the native token of the blockchain. Our protocol is basically our very own way of making an <em>Algorithmic Stablecoin.</em>
                             </div>
                         </div>
 
@@ -619,20 +669,24 @@
 
 
                     <!-- FAQ 2 -->
-                    <div class="faq-item premium-border rounded-2xl overflow-hidden bg-navy/50">
+                    <div class="faq-item">
 
-                        <button class="faq-button w-full px-6 lg:px-8 py-7 flex items-center justify-between text-left">
-                            <span class="faq-question text-lg lg:text-xl font-semibold">
+                        <button
+                            class="faq-button"
+                            type="button"
+                            aria-expanded="false"
+                        >
+                            <span class="faq-question">
                                 How does the protocol work?
                             </span>
 
-                            <span class="faq-icon text-orange text-3xl font-light">
+                            <span class="faq-icon">
                                 +
                             </span>
                         </button>
 
                         <div class="faq-content">
-                            <div class="px-6 lg:px-8 pb-7 text-cream/55 leading-relaxed">
+                            <div class="faq-answer">
                                 Haurva Protocol connects to the oracle (for now <em>BNB/USD</em>) and gets the price of the native coin, then aligns its own price to exactly one US Dollar and also takes %0.05 minting fee per coin. Also, when you redeem it, it does it in reverse and gives you back the token you spent.
                             </div>
                         </div>
@@ -641,20 +695,24 @@
 
 
                     <!-- FAQ 3 -->
-                    <div class="faq-item premium-border rounded-2xl overflow-hidden bg-navy/50">
+                    <div class="faq-item">
 
-                        <button class="faq-button w-full px-6 lg:px-8 py-7 flex items-center justify-between text-left">
-                            <span class="faq-question text-lg lg:text-xl font-semibold">
+                        <button
+                            class="faq-button"
+                            type="button"
+                            aria-expanded="false"
+                        >
+                            <span class="faq-question">
                                 Where can I use the token?
                             </span>
 
-                            <span class="faq-icon text-orange text-3xl font-light">
+                            <span class="faq-icon">
                                 +
                             </span>
                         </button>
 
                         <div class="faq-content">
-                            <div class="px-6 lg:px-8 pb-7 text-cream/55 leading-relaxed">
+                            <div class="faq-answer">
                                 Every place you can use crypto currencies and stablecoins, you can use Haurva Protocol as well.
                             </div>
                         </div>
@@ -663,20 +721,24 @@
 
 
                     <!-- FAQ 4 -->
-                    <div class="faq-item premium-border rounded-2xl overflow-hidden bg-navy/50">
+                    <div class="faq-item">
 
-                        <button class="faq-button w-full px-6 lg:px-8 py-7 flex items-center justify-between text-left">
-                            <span class="faq-question text-lg lg:text-xl font-semibold">
+                        <button
+                            class="faq-button"
+                            type="button"
+                            aria-expanded="false"
+                        >
+                            <span class="faq-question">
                                 Is the protocol decentralized?
                             </span>
 
-                            <span class="faq-icon text-orange text-3xl font-light">
+                            <span class="faq-icon">
                                 +
                             </span>
                         </button>
 
                         <div class="faq-content">
-                            <div class="px-6 lg:px-8 pb-7 text-cream/55 leading-relaxed">
+                            <div class="faq-answer">
                                 Not in a traditional sense, but it's not bank or corporate backed as well. Haurva Protocol is mostly like a startup with the goal of making stablecoins great again!
                             </div>
                         </div>
@@ -685,69 +747,83 @@
 
 
                     <!-- FAQ 5 -->
-                    <div class="faq-item premium-border rounded-2xl overflow-hidden bg-navy/50">
+                    <div class="faq-item">
 
-                        <button class="faq-button w-full px-6 lg:px-8 py-7 flex items-center justify-between text-left">
-                            <span class="faq-question text-lg lg:text-xl font-semibold">
+                        <button
+                            class="faq-button"
+                            type="button"
+                            aria-expanded="false"
+                        >
+                            <span class="faq-question">
                                 What blockchain does Haurva Protocol use?
                             </span>
 
-                            <span class="faq-icon text-orange text-3xl font-light">
+                            <span class="faq-icon">
                                 +
                             </span>
                         </button>
 
                         <div class="faq-content">
-                            <div class="px-6 lg:px-8 pb-7 text-cream/55 leading-relaxed">
+                            <div class="faq-answer">
                                 We currently are on Binance Smart Chain. We have plans of bridging the protocol to every other EVM compatible chain as well but for now, we stick to BSC.
                             </div>
                         </div>
 
                     </div>
 
-                </div>
 
-                <!-- FAQ 6 -->
-                    <div class="faq-item premium-border rounded-2xl overflow-hidden bg-navy/50">
+                    <!-- FAQ 6 -->
+                    <div class="faq-item">
 
-                        <button class="faq-button w-full px-6 lg:px-8 py-7 flex items-center justify-between text-left">
-                            <span class="faq-question text-lg lg:text-xl font-semibold">
+                        <button
+                            class="faq-button"
+                            type="button"
+                            aria-expanded="false"
+                        >
+                            <span class="faq-question">
                                 Why did you use BSC?
                             </span>
 
-                            <span class="faq-icon text-orange text-3xl font-light">
+                            <span class="faq-icon">
                                 +
                             </span>
                         </button>
 
                         <div class="faq-content">
-                            <div class="px-6 lg:px-8 pb-7 text-cream/55 leading-relaxed">
+                            <div class="faq-answer">
                                 Because BSC is fast and also affordable. It also has good reputation in the crypto community.
                             </div>
                         </div>
 
                     </div>
 
-                    <!-- FAQ 7 -->
-                    <div class="faq-item premium-border rounded-2xl overflow-hidden bg-navy/50">
 
-                        <button class="faq-button w-full px-6 lg:px-8 py-7 flex items-center justify-between text-left">
-                            <span class="faq-question text-lg lg:text-xl font-semibold">
+                    <!-- FAQ 7 -->
+                    <div class="faq-item">
+
+                        <button
+                            class="faq-button"
+                            type="button"
+                            aria-expanded="false"
+                        >
+                            <span class="faq-question">
                                 Where can I learn more?
                             </span>
 
-                            <span class="faq-icon text-orange text-3xl font-light">
+                            <span class="faq-icon">
                                 +
                             </span>
                         </button>
 
                         <div class="faq-content">
-                            <div class="px-6 lg:px-8 pb-7 text-cream/55 leading-relaxed">
+                            <div class="faq-answer">
                                 We have <a href="https://news.haurvacoin.com">Harva News ↗</a> where you can learn more about our project and follow the news.
                             </div>
                         </div>
 
                     </div>
+
+                </div>
 
             </div>
 
@@ -1049,16 +1125,31 @@
             button.addEventListener('click', () => {
 
                 const item = button.closest('.faq-item');
+                const isActive = item.classList.contains('active');
 
                 document.querySelectorAll('.faq-item').forEach(otherItem => {
 
-                    if (otherItem !== item) {
-                        otherItem.classList.remove('active');
-                    }
+                    otherItem.classList.remove('active');
+
+                    const otherButton =
+                        otherItem.querySelector('.faq-button');
+
+                    otherButton.setAttribute('aria-expanded', 'false');
 
                 });
 
-                item.classList.toggle('active');
+                if (!isActive) {
+
+                    item.classList.add('active');
+
+                    button.setAttribute('aria-expanded', 'true');
+
+                    const content =
+                        item.querySelector('.faq-content');
+
+                    content.style.maxHeight =
+                        content.scrollHeight + 'px';
+                }
 
             });
 
