@@ -73,22 +73,22 @@
             width: 100%;
         }
 
-        /* =========================================================
+        /* =========================
            FAQ
-           ========================================================= */
+        ========================== */
 
         .faq-list {
             display: flex;
             flex-direction: column;
-            gap: 32px;
+            gap: 22px;
             width: 100%;
         }
 
         .faq-item {
             width: 100%;
-            background: #071A33;
-            border: 1px solid rgba(245, 243, 238, 0.14);
-            border-radius: 30px;
+            background: rgba(7, 26, 51, 0.72);
+            border: 1px solid rgba(245, 243, 238, 0.10);
+            border-radius: 24px;
             overflow: hidden;
             transition:
                 border-color 0.25s ease,
@@ -96,45 +96,50 @@
         }
 
         .faq-item:hover {
-            border-color: rgba(20, 100, 255, 0.45);
+            border-color: rgba(20, 100, 255, 0.40);
         }
 
         .faq-item.active {
-            border-color: rgba(255, 106, 0, 0.45);
+            border-color: rgba(255, 106, 0, 0.35);
         }
 
         .faq-button {
             width: 100%;
-            min-height: 160px;
-            padding: 0 56px;
+            min-height: 108px;
+            padding: 24px 32px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 40px;
+            gap: 24px;
             text-align: left;
             background: transparent;
             color: #F5F3EE;
+            cursor: pointer;
         }
 
         .faq-question {
-            display: block;
-            font-size: 28px;
-            line-height: 1.25;
+            font-size: 1.125rem;
+            line-height: 1.5;
             font-weight: 600;
-            letter-spacing: -0.025em;
+        }
+
+        @media (min-width: 1024px) {
+            .faq-question {
+                font-size: 1.25rem;
+            }
         }
 
         .faq-icon {
-            flex: 0 0 48px;
-            width: 48px;
-            height: 48px;
-            border: 1px solid rgba(255, 106, 0, 0.65);
+            flex: 0 0 38px;
+            width: 38px;
+            height: 38px;
+            border: 1px solid rgba(255, 106, 0, 0.60);
             border-radius: 9999px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: #FF6A00;
-            font-size: 31px;
+            font-size: 27px;
             font-weight: 300;
             line-height: 1;
             transition:
@@ -152,91 +157,61 @@
         .faq-content {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.4s ease;
+            transition: max-height 0.35s ease;
         }
 
         .faq-answer {
-            margin: 0 56px;
-            padding: 0 0 42px;
-            padding-top: 0;
-            color: rgba(245, 243, 238, 0.60);
-            font-size: 18px;
+            margin: 0 32px;
+            padding: 0 0 28px;
+            color: rgba(245, 243, 238, 0.55);
+            font-size: 1rem;
             line-height: 1.75;
-            border-top: 1px solid rgba(245, 243, 238, 0.08);
+            border-top: 1px solid rgba(245, 243, 238, 0.07);
         }
 
         .faq-answer::before {
             content: "";
             display: block;
-            height: 28px;
+            height: 18px;
         }
 
         .faq-answer a {
             color: #FF6A00;
-            transition: opacity 0.2s ease;
         }
 
-        .faq-answer a:hover {
-            opacity: 0.75;
-        }
-
-        @media (max-width: 768px) {
+        @media (max-width: 640px) {
             .faq-list {
-                gap: 18px;
+                gap: 14px;
             }
 
             .faq-item {
-                border-radius: 22px;
+                border-radius: 18px;
             }
 
             .faq-button {
-                min-height: 110px;
-                padding: 0 28px;
-                gap: 20px;
-            }
-
-            .faq-question {
-                font-size: 20px;
-            }
-
-            .faq-icon {
-                flex-basis: 40px;
-                width: 40px;
-                height: 40px;
-                font-size: 26px;
-            }
-
-            .faq-answer {
-                margin: 0 28px;
-                padding-bottom: 28px;
-                font-size: 16px;
-            }
-
-            .faq-answer::before {
-                height: 20px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .faq-button {
-                min-height: 96px;
-                padding: 0 20px;
+                min-height: 84px;
+                padding: 20px;
                 gap: 16px;
             }
 
             .faq-question {
-                font-size: 18px;
+                font-size: 1.125rem;
             }
 
             .faq-icon {
-                flex-basis: 36px;
-                width: 36px;
-                height: 36px;
-                font-size: 23px;
+                flex-basis: 34px;
+                width: 34px;
+                height: 34px;
+                font-size: 24px;
             }
 
             .faq-answer {
                 margin: 0 20px;
+                padding-bottom: 22px;
+            }
+
+            .faq-answer::before {
+                height: 14px;
             }
         }
     </style>
@@ -624,22 +599,21 @@
             class="bg-graphite py-28 lg:py-36"
         >
 
-            <div class="max-w-7xl mx-auto px-6 lg:px-10">
+            <div class="max-w-5xl mx-auto px-6 lg:px-10">
 
-                <div class="mb-16 lg:mb-20">
+                <div class="mb-14">
 
                     <p class="text-orange text-sm font-bold tracking-[0.3em] uppercase mb-5">
                         FAQ
                     </p>
 
-                    <h2 class="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">
+                    <h2 class="text-4xl md:text-6xl font-bold tracking-tight">
                         Frequently asked questions.
                     </h2>
 
                 </div>
 
 
-                <!-- ALL FAQ ITEMS ARE INSIDE ONE SINGLE LIST -->
                 <div class="faq-list">
 
                     <!-- FAQ 1 -->
@@ -1125,30 +1099,52 @@
             button.addEventListener('click', () => {
 
                 const item = button.closest('.faq-item');
-                const isActive = item.classList.contains('active');
+                const content = item.querySelector('.faq-content');
+                const isOpen = item.classList.contains('active');
 
+                /*
+                    Close every other FAQ.
+                    IMPORTANT:
+                    We explicitly reset maxHeight here.
+                    Removing the active class alone is not enough
+                    because maxHeight is set inline when opened.
+                */
                 document.querySelectorAll('.faq-item').forEach(otherItem => {
 
-                    otherItem.classList.remove('active');
+                    const otherContent =
+                        otherItem.querySelector('.faq-content');
 
                     const otherButton =
                         otherItem.querySelector('.faq-button');
 
-                    otherButton.setAttribute('aria-expanded', 'false');
+                    otherItem.classList.remove('active');
+
+                    otherButton.setAttribute(
+                        'aria-expanded',
+                        'false'
+                    );
+
+                    otherContent.style.maxHeight = '0px';
 
                 });
 
-                if (!isActive) {
+
+                /*
+                    If this item was closed, open it.
+                    If it was already open, leave it closed.
+                */
+                if (!isOpen) {
 
                     item.classList.add('active');
 
-                    button.setAttribute('aria-expanded', 'true');
-
-                    const content =
-                        item.querySelector('.faq-content');
+                    button.setAttribute(
+                        'aria-expanded',
+                        'true'
+                    );
 
                     content.style.maxHeight =
                         content.scrollHeight + 'px';
+
                 }
 
             });
