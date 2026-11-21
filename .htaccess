@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www\.haurvacoin\.com(?::[0-9]+)?$ [NC]
+RewriteCond %{THE_REQUEST} "^[^[:space:]]+[[:space:]]+(/[^?[:space:]]*)"
+RewriteRule ^ https://haurvacoin.com%1 [R=301,L,NE]
