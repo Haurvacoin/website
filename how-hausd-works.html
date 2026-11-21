@@ -7,54 +7,71 @@
     <meta name="description" content="Learn how the HAUSD mint contract uses BNB collateral and a price feed, what can affect the dollar peg, and where to verify the contracts.">
     <link rel="canonical" href="https://haurvacoin.com/how-hausd-works.html">
     <link rel="icon" href="/haurvacoin.png" type="image/png">
-    <style>
-        :root { color-scheme: dark; background: #111318; color: #f5f3ee; font-family: system-ui, sans-serif; }
-        body { margin: 0; }
-        header { border-bottom: 1px solid #343945; }
-        nav, main { width: min(100% - 40px, 760px); margin-inline: auto; }
-        nav { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; padding-block: 22px; }
-        a { color: #99beff; text-underline-offset: .2em; }
-        a:hover { color: #ffa467; }
-        main { padding-block: clamp(40px, 8vw, 100px); }
-        h1 { margin: 0; font-size: clamp(2.8rem, 8vw, 5.5rem); line-height: 1; letter-spacing: -.07em; }
-        h2 { font-size: 1.6rem; letter-spacing: -.025em; }
-        p, li { color: #cecfda; line-height: 1.7; }
-        .intro { font-size: 1.25rem; max-width: 38rem; }
-        section { margin-top: 42px; border-top: 1px solid #343945; padding-top: 13px; }
-        li + li { margin-top: .5em; }
-    </style>
+    <link rel="stylesheet" href="/hausd-guide.css">
 </head>
 <body>
-    <header>
-        <nav aria-label="Main navigation">
-            <a href="/">Haurva Protocol</a>
-            <a href="/whitepaper.pdf">Whitepaper (PDF)</a>
+    <header class="site-header">
+        <nav class="wrap" aria-label="Main navigation">
+            <a class="brand" href="/"><img src="/haurvacoin.png" alt="" width="40" height="40"> Haurva Protocol</a>
+            <div class="nav-links">
+                <a href="/#contracts">Contracts</a>
+                <a href="/whitepaper.pdf">Whitepaper</a>
+                <a class="button" href="https://minter.haurvacoin.com/">Open minter</a>
+            </div>
         </nav>
     </header>
     <main>
-        <h1>How HAUSD works</h1>
-        <p class="intro">HAUSD is a stablecoin on BNB Chain that targets one US dollar. The minting contract accepts BNB and uses a BNB/USD price feed to calculate how much HAUSD to issue.</p>
-        <section>
-            <h2>From BNB deposit to HAUSD</h2>
-            <ol>
-                <li>Choose a network and enter a BNB amount in the minter.</li>
-                <li>The contract quote shows the collateral portion, fee and estimated HAUSD output. Review these amounts before confirming.</li>
-                <li>When the transaction succeeds, HAUSD is issued to the wallet. You can verify the transaction in a block explorer.</li>
+        <div class="hero">
+            <div class="wrap hero-grid">
+                <div>
+                    <p class="label">Haurva Protocol / BNB Chain</p>
+                    <h1>How <span>HAUSD</span> works</h1>
+                    <p class="intro">HAUSD targets one US dollar. Haurva uses BNB as collateral and a BNB/USD price feed to calculate how much HAUSD to issue.</p>
+                    <a class="button primary" href="#minting">Explore the minting process</a>
+                </div>
+                <img class="hero-art" src="/image-1.jpeg" alt="" width="512" height="512" fetchpriority="high">
+            </div>
+        </div>
+
+        <section class="wrap section" id="minting" aria-labelledby="minting-title">
+            <p class="label">Minting</p>
+            <h2 id="minting-title">From BNB deposit to HAUSD</h2>
+            <ol class="flow">
+                <li><h3>Enter a BNB amount</h3><p>Choose mainnet or testnet in the minter and enter the amount of BNB you want to deposit.</p></li>
+                <li><h3>Review the quote</h3><p>The contract uses the BNB/USD oracle price to calculate the collateral, fee and estimated HAUSD output.</p></li>
+                <li><h3>Receive HAUSD</h3><p>Confirm the transaction in your wallet. Once it succeeds, you can check the issued HAUSD on BscScan.</p></li>
             </ol>
         </section>
-        <section>
-            <h2>What can move HAUSD away from $1?</h2>
-            <p>The oracle prices BNB for minting. HAUSD trades at prices set by buyers and sellers. Thin liquidity can make it hard to trade near $1, and a fall in BNB’s price can reduce the dollar value of the collateral. Oracle and smart-contract failures can also disrupt protocol operations.</p>
-        </section>
-        <section>
-            <h2>Verify the deployment</h2>
-            <p>Check the network, token address and contract details before interacting. The mainnet and testnet use different addresses.</p>
-            <ul>
-                <li><a href="https://bscscan.com/address/0x987Ede7c408c65190A423782fcf3FA49E5eA00bA">BNB Chain mainnet contract on BscScan</a></li>
-                <li><a href="https://testnet.bscscan.com/address/0x907494f4647119041E36fe4Abd6E953D89553F1D">BNB Chain testnet contract on BscScan</a></li>
-                <li><a href="https://minter.haurvacoin.com/">Open the HAUSD minter</a></li>
-            </ul>
+
+        <div class="risk-band">
+            <section class="wrap section risk-grid" aria-labelledby="risk-title">
+                <div>
+                    <p class="label">Peg risk</p>
+                    <h2 id="risk-title">What can move HAUSD away from $1?</h2>
+                    <p>Buyers and sellers determine the trading price. The oracle provides a BNB price for minting.</p>
+                </div>
+                <dl>
+                    <div><dt>Trading liquidity</dt><dd>Thin liquidity can make it harder to trade HAUSD near $1.</dd></div>
+                    <div><dt>Collateral value</dt><dd>A drop in BNB’s price can reduce the dollar value of the reserve.</dd></div>
+                    <div><dt>Protocol failures</dt><dd>Oracle outages and smart-contract bugs can disrupt protocol operations.</dd></div>
+                </dl>
+            </section>
+        </div>
+
+        <section class="wrap section" aria-labelledby="contracts-title">
+            <p class="label">Contract addresses</p>
+            <h2 id="contracts-title">Verify the deployment</h2>
+            <p>Check the network and address before interacting with a contract.</p>
+            <div class="contract-grid">
+                <a class="card contract" href="https://bscscan.com/address/0x987Ede7c408c65190A423782fcf3FA49E5eA00bA">
+                    <strong>BNB Chain mainnet ↗</strong><code>0x987Ede7c408c65190A423782fcf3FA49E5eA00bA</code>
+                </a>
+                <a class="card contract" href="https://testnet.bscscan.com/address/0x907494f4647119041E36fe4Abd6E953D89553F1D">
+                    <strong>BNB Chain testnet ↗</strong><code>0x907494f4647119041E36fe4Abd6E953D89553F1D</code>
+                </a>
+            </div>
         </section>
     </main>
+    <footer><div class="wrap"><a href="/">Haurva Protocol</a><a href="/whitepaper.pdf">Read the whitepaper (PDF)</a></div></footer>
 </body>
 </html>
